@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_admin"
+    tools:ignore="UnusedNavigation"
+    app:startDestination="@id/usersOrdersFragment">
+
+    <fragment
+        android:id="@+id/usersOrdersFragment"
+        android:name="bego.market.belbies.Fragments.UsersOrdersFragment"
+        android:label="الطلبات"
+        tools:layout="@layout/fragment_users_orders">
+        <action
+            android:id="@+id/action_usersOrdersFragment_to_userOrderFragment2"
+            app:destination="@id/userOrderFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/userOrderFragment2"
+        android:name="bego.market.belbies.Fragments.UserOrderFragment"
+        android:label="الطلبات"
+        tools:layout="@layout/fragment_user_order">
+        <argument
+            android:name="mail"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSectionFragment"
+        android:name="bego.market.belbies.Fragments.AddSectionFragment"
+        android:label="@string/adminAddSection"
+        tools:layout="@layout/fragment_add_section"/>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="bego.market.belbies.Fragments.AddProductFragment"
+        android:label="أضافه منتجات"
+        tools:layout="@layout/fragment_edit_product"/>
+    <fragment
+        android:id="@+id/adminAllProductFragment"
+        android:name="bego.market.belbies.Fragments.AdminAllProductFragment"
+        android:label="تعديل منتج"
+        tools:layout="@layout/fragment_all_product_admin">
+        <action
+            android:id="@+id/action_adminAllProductFragment_to_editProductFragment"
+            app:destination="@id/editProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProductFragment"
+        android:name="bego.market.belbies.Fragments.EditProductFragment"
+        android:label="تعديل منتج"
+        tools:layout="@layout/fragment_edit_product">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="price"
+            app:argType="string" />
+        <argument
+            android:name="productOfferPercentage"
+            app:argType="string" />
+        <argument
+            android:name="productOfferPrice"
+            app:argType="string" />
+        <argument
+            android:name="section"
+            app:argType="string" />
+    </fragment>
+    <activity
+        android:id="@+id/logoutActivity2"
+        android:name="bego.market.belbies.Activity.LogoutActivity"
+        android:label="LogoutActivity" />
+    <activity
+        android:id="@+id/faceBookActivity2"
+        android:name="bego.market.belbies.Activity.FaceBookActivity"
+        android:label="FaceBookActivity" />
+    <fragment
+        android:id="@+id/allReportFragment"
+        android:name="bego.market.belbies.Fragments.AllReportFragment"
+        android:label="التقارير"
+        tools:layout="@layout/fragment_all_report"/>
+
+
+</navigation>

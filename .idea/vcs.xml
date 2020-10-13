@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Kotlin/junior/3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Kotlin/junior/4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_project/Clima-Flutter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_project/chat_application" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_project/destini-challenge-starting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_project/dicee-flutter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flutter_project/flash-chat-flutter" vcs="Git" />
+  </component>
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/faceBookActivity"
+        android:title="@string/facebook" />
+    <item
+        android:id="@+id/offersFragment"
+        android:title="@string/offers" />
+    <item
+        android:id="@+id/_rate"
+        android:title="@string/rate" />
+    <item
+        android:id="@+id/reportFragment"
+        android:title="@string/reports" />
+    <item
+        android:id="@+id/allSectionFragment"
+        android:title="@string/sections" />
+    <item
+        android:id="@+id/myAddress"
+        android:title="@string/addressDelivery" />
+    <item
+        android:id="@+id/cartFragment"
+        android:title="@string/cart" />
+    <item
+        android:id="@+id/loginActivity"
+        android:title="@string/logIn" />
+    <item
+        android:id="@+id/logoutActivity"
+        android:title="@string/logout" />
+</menu>

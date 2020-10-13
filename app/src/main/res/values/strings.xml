@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Belbies</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook">صفحه الفيسبوك</string>
+    <string name="offers">العروض</string>
+    <string name="rate">قيم التطبيق</string>
+    <string name="reports">الشكوى و المقترحات</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="belbies_market">Belbies Market</string>
+    <string name="cart">عربه التسوق</string>
+    <string name="description">الوصف:</string>
+    <string name="title_action_bar">%1$S</string>
+    <string name="register">إنشاء حساب جديد</string>
+    <string name="login_email_hint">البريد الالكترونى</string>
+    <string name="login_password_hint">الرقم السرى</string>
+    <string name="signup_login_hint">هل لديك حساب؟ تسجيل الدخول</string>
+    <string name="login_signup_hint">ليس لديك حساب؟ سجل</string>
+    <string name="logIn">تسجيل دخول</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="name_hint">الاسم</string>
+    <string name="phone_hint">رقم الهاتف</string>
+    <string name="header_name">Belbies Market</string>
+    <string name="verification">التحقق من البريد الالكترونى</string>
+    <string name="verification_code">كود التحقق</string>
+    <string name="address">العنوان الخاص بك :</string>
+    <string name="phone">رقم هاتفك : </string>
+    <string name="sections">الاقسام</string>
+    <string name="addressDelivery">العنوان</string>
+    <string name="admin_order">الطلبات</string>
+    <string name="adminAddProduct">اضافه منتج</string>
+    <string name="adminEditProduct">تعديل منتج</string>
+    <string name="adminAddSection">أضافه قسم</string>
+    <string-array name="belbies">
+        <item>بلبيس</item>
+    </string-array>
+</resources>

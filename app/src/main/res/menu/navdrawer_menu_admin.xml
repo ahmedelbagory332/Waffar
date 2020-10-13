@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/faceBookActivity2"
+        android:title="@string/facebook" />
+    <item
+        android:id="@+id/addProductFragment"
+        android:title="@string/adminAddProduct" />
+    <item
+        android:id="@+id/adminAllProductFragment"
+        android:title="@string/adminEditProduct" />
+    <item
+        android:id="@+id/addSectionFragment"
+        android:title="@string/adminAddSection" />
+    <item
+        android:id="@+id/allReportFragment"
+        android:title="@string/reports" />
+    <item
+        android:id="@+id/logoutActivity2"
+        android:title="@string/logout" />
+</menu>
