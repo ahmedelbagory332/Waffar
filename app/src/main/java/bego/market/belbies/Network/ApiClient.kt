@@ -50,7 +50,7 @@ class ApiClient {
     fun addUser( name:String, email:String,password:String) : Call<SignUp> = apiInterface.addUser(name,email,password)
     fun codeVerified(email:String,code:String) : Call<Verified> = apiInterface.codeVerified(email,code)
     fun signIn(email:String,password:String) : Call<SignIn> = apiInterface.signIn(email,password)
-    fun addOrder(product_name:String,  product_img:String,  product_total_price:String,  product_user_email:String,user_address:String) : Call<Orders> = apiInterface.addOrder(product_name,  product_img,  product_total_price,  product_user_email,user_address)
+    fun addOrder(product_name:String,  product_img:String,  product_total_price:String,  product_user_email:String,user_address:String,product_quantity:String) : Call<Orders> = apiInterface.addOrder(product_name,  product_img,  product_total_price,  product_user_email,user_address,product_quantity)
     fun getUsersOrders() : Call<AllUsersOrders> = apiInterface.getUsersOrders()
     fun getUserOrder(product_user_email:String) : Call<UserOrders> = apiInterface.getUserOrder(product_user_email)
     fun deleteUserOrders(user_mail:String) : Call<DeleteUserOrders> = apiInterface.deleteUserOrders(user_mail)

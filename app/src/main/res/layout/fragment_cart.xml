@@ -23,10 +23,79 @@
             android:text="لا يوجد منتجات فى العربه" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cartItem"
+    <LinearLayout
+        android:id="@+id/_allOrder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:spanCount="2" />
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp">
+
+            <TableRow>
+
+                <TextView
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:layout_margin="10dp"
+                    android:padding="3dip"
+                    android:text="المجموع"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:layout_margin="10dp"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="خدمه التوصيل"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:layout_margin="10dp"
+                    android:padding="3dip"
+                    android:text="طلبك"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/_allOrderPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:padding="3dip" />
+
+                <TextView
+                    android:id="@+id/_delivery_price"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="10 جنيه" />
+
+                <TextView
+                    android:id="@+id/_total_price"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:padding="3dip" />
+
+            </TableRow>
+        </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="2" />
+
+    </LinearLayout>
+
 </FrameLayout>

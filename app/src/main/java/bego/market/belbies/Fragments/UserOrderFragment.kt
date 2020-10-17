@@ -1,9 +1,12 @@
 package bego.market.belbies.Fragments
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.*
 import android.view.inputmethod.EditorInfo
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,9 +29,12 @@ class UserOrderFragment : Fragment(),SearchView.OnQueryTextListener {
     lateinit var userOrderViewModel: UserOrderViewModel
     lateinit var deleteOrderViewModel: DeleteOrderViewModel
     lateinit var deliveryViewModel: DeliveryViewModel
+    lateinit var allOrderLinearLayout: LinearLayout
 
     var ordertList: MutableList<OrdersUser> = mutableListOf()
-
+    lateinit var totalPrice: TextView
+    lateinit var allOrderPrice: TextView
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -36,6 +42,10 @@ class UserOrderFragment : Fragment(),SearchView.OnQueryTextListener {
 
         val  rsSection: RecyclerView = view.findViewById(R.id.user_order)
         val spinKitView = view.findViewById<SpinKitView>(R.id.spin_kit)
+
+        totalPrice = view.findViewById(R.id.admin_total_price)
+        allOrderPrice = view.findViewById(R.id.admin_allOrderPrice)
+        allOrderLinearLayout = view.findViewById(R.id.admin_allOrder)
 
         val dialog = ACProgressFlower.Builder(activity!!)
             .direction(ACProgressConstant.DIRECT_CLOCKWISE)
@@ -62,6 +72,8 @@ class UserOrderFragment : Fragment(),SearchView.OnQueryTextListener {
                          deleteOrderViewModel.deleteOrders(list.ordersUser[it].productNumber)
                         list.ordersUser.removeAt(it)
                         userOrderAdapter?.notifyDataSetChanged()
+                        totalPrice.text=list.ordersUser.sumBy { it.price.toInt() }.toString()+" جنية "
+                        allOrderPrice.text= (list.ordersUser.sumBy { it.price.toInt() } + 10).toString() +" جنية "
 
                     }
                     else{
@@ -79,9 +91,12 @@ class UserOrderFragment : Fragment(),SearchView.OnQueryTextListener {
                 },
                 context,
                 list.ordersUser)
-
+            totalPrice.text=list.ordersUser.sumBy { it.price.toInt() }.toString()+" جنية "
+            allOrderPrice.text= (list.ordersUser.sumBy { it.price.toInt() } + 10).toString() +" جنية "
                        rsSection.adapter = userOrderAdapter
                        spinKitView.visibility = View.GONE
+            allOrderLinearLayout.visibility = View.VISIBLE
+
 
             activity!!.viewModelStore.clear()
 

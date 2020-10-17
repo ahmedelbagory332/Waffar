@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:padding="10dp"
     tools:context=".Fragments.SectionFragment">
 
     <ScrollView
@@ -17,6 +18,7 @@
 
             <TextView
                 android:id="@+id/textView3"
+                style="@android:style/TextAppearance.DeviceDefault.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -24,7 +26,6 @@
                 android:layout_marginEnd="16dp"
                 android:text="@string/address"
                 android:textColor="@color/colorPrimary"
-                style="@android:style/TextAppearance.DeviceDefault.Medium"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -47,8 +48,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
-                style="@android:style/TextAppearance.DeviceDefault.Medium"
                 android:id="@+id/textView5"
+                style="@android:style/TextAppearance.DeviceDefault.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -78,8 +79,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <Button
-                style="@android:style/TextAppearance.DeviceDefault.Small"
                 android:id="@+id/_save"
+                style="@android:style/TextAppearance.DeviceDefault.Small"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -95,6 +96,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/_phone"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="10dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/_save">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:text="@string/addressHint"
+                    android:textColor="#F6F6F6" />
+            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

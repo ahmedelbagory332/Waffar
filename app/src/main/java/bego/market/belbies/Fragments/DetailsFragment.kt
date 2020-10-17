@@ -23,7 +23,7 @@ class DetailsFragment : Fragment() {
     lateinit var detailsViewModel: DetailsViewModel
     lateinit var cartViewModel: CartViewModel
     lateinit var   cart : Cart
-
+    var quantity:Int = 1
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -39,7 +39,11 @@ class DetailsFragment : Fragment() {
         val productName: TextView = view.findViewById(R.id.product_details_name)
         val productDescription: TextView = view.findViewById(R.id.product_details_des)
         val addProductToCart: Button = view.findViewById(R.id.details_cart_order)
-        val productQuantityEditText : EditText = view.findViewById(R.id.editTextProductQuantity)
+        val productQuantityEditText : TextView = view.findViewById(R.id.editTextProductQuantity)
+
+        val PlusQuantity: Button = view.findViewById(R.id.plusQuantity)
+        val MinsQuantity: Button = view.findViewById(R.id.minsQuantity)
+
         cart  = Cart()
 
         detailsViewModel = ViewModelProvider(activity!!).get(DetailsViewModel::class.java)
@@ -87,6 +91,19 @@ class DetailsFragment : Fragment() {
                 cart.totalPrice = "${productQuantityEditText.text.toString().toInt()*cart.totalPrice.toString().toInt()}"
                 cartViewModel.setProductInCart(cart)
             }
+        }
+
+        PlusQuantity.setOnClickListener {
+            quantity++
+            productQuantityEditText.setText("${quantity}")
+        }
+
+        MinsQuantity.setOnClickListener {
+                 if (quantity!=1){
+                     quantity--
+                     productQuantityEditText.setText("${quantity}")
+                 }
+
         }
 
         cartViewModel.cart.observe(viewLifecycleOwner, Observer {

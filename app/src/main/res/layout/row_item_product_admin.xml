@@ -16,14 +16,13 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_offer_Percentage"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/d" />
 
@@ -35,7 +34,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="right"
         android:maxLines="2"
         android:text="كانز"
@@ -54,7 +53,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="right"
         android:maxLines="1"
         android:text="46 L.E"
@@ -74,7 +73,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="right"
         android:maxLines="1"
         android:text="46 L.E"
@@ -89,24 +88,24 @@
 
     <TextView
         android:id="@+id/product_offer_Percentage"
-        android:layout_width="55dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:background="#FF0000"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="right"
         android:maxLines="1"
+        android:padding="2dp"
         android:text="46 L.E"
-        android:textSize="10sp"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/product_img"
-        app:layout_constraintEnd_toEndOf="@+id/product_img"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/product_img"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

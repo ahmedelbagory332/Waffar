@@ -5,7 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="fontFamily">@font/el_messiri</item>
+        <item name="fontFamily">@font/thesansplain</item>
     </style>
 
     <style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -13,7 +13,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="fontFamily">@font/el_messiri</item>
+        <item name="fontFamily">@font/thesansplain</item>
+
     </style>
 
     <!--designs for login and register-->

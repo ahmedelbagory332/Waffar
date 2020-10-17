@@ -1,9 +1,6 @@
 package bego.market.belbies.Fragments
 
-import android.app.Activity.RESULT_OK
-import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,22 +9,21 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import bego.market.belbies.NetworkUtils
 import bego.market.belbies.R
-import bego.market.belbies.ViewModel.AddProductViewModel
 import bego.market.belbies.ViewModel.AddSectionViewModel
 import bego.market.belbies.ViewModel.EditProductViewModel
-import bego.market.belbies.ViewModel.ViewModelFactory.AddProductModelFactory
 import bego.market.belbies.ViewModel.ViewModelFactory.AddSectionModelFactory
 import bego.market.belbies.ViewModel.ViewModelFactory.EditProductModelFactory
 import cc.cloudist.acplibrary.ACProgressConstant
 import cc.cloudist.acplibrary.ACProgressFlower
 import com.bumptech.glide.Glide
 import com.sdsmdg.tastytoast.TastyToast
+import java.text.NumberFormat
+import java.util.*
 
 
-@Suppress("UNREACHABLE_CODE")
+@Suppress("UNREACHABLE_CODE", "RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class EditProductFragment : Fragment(){
 
     lateinit var addSectionViewModel: AddSectionViewModel
@@ -40,7 +36,6 @@ class EditProductFragment : Fragment(){
     lateinit var ProductNameEditText:EditText
     lateinit var ProductDescriptionEditText:EditText
     lateinit var  ProductPriceEditText:EditText
-    lateinit var   ProductOfferPriceEditText:EditText
     lateinit var  ProductOfferPercentageEditText:EditText
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
@@ -51,7 +46,6 @@ class EditProductFragment : Fragment(){
          ProductNameEditText = view.findViewById(R.id.productNameEditText)
          ProductDescriptionEditText = view.findViewById(R.id.productDescriptionEditText)
          ProductPriceEditText = view.findViewById(R.id.productPriceEditText)
-         ProductOfferPriceEditText = view.findViewById(R.id.productOfferPriceEditText)
          ProductOfferPercentageEditText = view.findViewById(R.id.productOfferPercentageEditText)
         editSectionImage = view.findViewById(R.id.productImage)
 
@@ -70,7 +64,6 @@ class EditProductFragment : Fragment(){
         ProductNameEditText.setText(product.name)
         ProductDescriptionEditText.setText(product.description)
         ProductPriceEditText.setText(product.price)
-        ProductOfferPriceEditText.setText(product.productOfferPrice)
         ProductOfferPercentageEditText.setText(product.productOfferPercentage)
 
         addSectionViewModel = ViewModelProvider(activity!!,viewModelFactoryAddSection).get(AddSectionViewModel::class.java)
@@ -123,19 +116,21 @@ class EditProductFragment : Fragment(){
         editProductViewModel.connectionError.observe(viewLifecycleOwner, Observer {
             TastyToast.makeText(context,it, TastyToast.LENGTH_LONG, TastyToast.ERROR).show()
             dialog.dismiss()
-            ProductOfferPriceEditText.setText(it)
          })
 
         editButton.setOnClickListener {
             if (NetworkUtils().isInternetAvailable(activity!!)){
                 dialog.show()
-                if ((ProductOfferPriceEditText.text.isEmpty() || ProductOfferPercentageEditText.text.isEmpty()))
+                if (ProductOfferPercentageEditText.text.isEmpty())
                 {
                     editProductViewModel.editProduct(product.id.toInt(),ProductNameEditText.text.toString(),ProductDescriptionEditText.text.toString(),ProductPriceEditText.text.toString(),sectionName,"0","0")
                 }
                 else
                 {
-                    editProductViewModel.editProduct(product.id.toInt(),ProductNameEditText.text.toString(),ProductDescriptionEditText.text.toString(),ProductPriceEditText.text.toString(),sectionName,ProductOfferPriceEditText.text.toString(),ProductOfferPercentageEditText.text.toString())
+                    val fmt: NumberFormat = NumberFormat.getNumberInstance(Locale.US)
+                    val productOfferPercentage: Double = fmt.parse(ProductOfferPercentageEditText.text.toString()).toDouble()/100
+                    val priceOffer = ProductPriceEditText.text.toString().toInt() * productOfferPercentage
+                    editProductViewModel.editProduct(product.id.toInt(),ProductNameEditText.text.toString(),ProductDescriptionEditText.text.toString(),ProductPriceEditText.text.toString(),sectionName,priceOffer.toInt().toString(),ProductOfferPercentageEditText.text.toString())
                 }
             }
             else{

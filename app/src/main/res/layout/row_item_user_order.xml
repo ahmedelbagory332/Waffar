@@ -7,6 +7,27 @@
     android:layout_height="wrap_content"
     android:background="#FFFFFF">
 
+    <TextView
+        android:id="@+id/order_count"
+        style="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:ellipsize="end"
+
+        android:gravity="start"
+        android:maxLines="2"
+        android:text="الكمية : 3 عبوات"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/order_delivery"
+        app:layout_constraintEnd_toStartOf="@+id/order_imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order_price"
+        app:layout_constraintVertical_bias="0.0" />
+
     <ImageView
         android:id="@+id/order_imageView"
         android:layout_width="150dp"
@@ -27,7 +48,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="start"
         android:maxLines="2"
         android:text="اسم المنتج : كانز"
@@ -42,17 +63,17 @@
 
     <TextView
         android:id="@+id/order_price"
+        style="@android:style/TextAppearance.DeviceDefault.Medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="start"
-        android:maxLines="2"
+        android:maxLines="5"
         android:text="اجمالى السعر : 46 جنيه"
-        style="@android:style/TextAppearance.DeviceDefault.Medium"
         android:textColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/order_imageView"
         app:layout_constraintHorizontal_bias="1.0"
@@ -69,7 +90,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="start"
         android:maxLines="2"
         android:text="اجمالى السعر : 46 جنيه"
@@ -78,19 +99,18 @@
         app:layout_constraintEnd_toStartOf="@+id/order_imageView"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/order_price" />
+        app:layout_constraintTop_toBottomOf="@+id/order_count" />
 
     <Button
         android:id="@+id/order_delete"
+        style="@android:style/TextAppearance.DeviceDefault.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/bt_background_red"
         android:text="حذف"
         android:textColor="#FFFFFF"
-        style="@android:style/TextAppearance.DeviceDefault.Small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/order_imageView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -99,15 +119,14 @@
 
     <Button
         android:id="@+id/order_delivery"
+        style="@android:style/TextAppearance.DeviceDefault.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/bt_background_outer"
         android:text="توصيل"
         android:textColor="#000"
-        style="@android:style/TextAppearance.DeviceDefault.Small"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/order_imageView"
         app:layout_constraintHorizontal_bias="0.0"

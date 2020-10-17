@@ -55,6 +55,7 @@
                 android:layout_marginTop="322dp"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
+                android:textAlignment="center"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +71,7 @@
                 android:layout_marginTop="68dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/description"
-                android:textColor="#009688"
+                android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -92,35 +93,81 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <TextView
-                android:id="@+id/textView4"
-                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="الكمية:"
-                android:textColor="#009688"
-                app:layout_constraintBaseline_toBaselineOf="@+id/editTextProductQuantity"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/editTextProductQuantity" />
-
-            <EditText
-                android:id="@+id/editTextProductQuantity"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="ادخل الكمية"
-                android:inputType="number"
-                android:textColorLink="#000000"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/details_cart_order"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/product_details_des" />
+                app:layout_constraintTop_toBottomOf="@+id/product_details_des">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="اختر الكميه : "
+                    android:textColor="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/minsQuantity"
+                        style="@android:style/TextAppearance.DeviceDefault.Small"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bt_background"
+                        android:text="-"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextProductQuantity" />
+
+                    <TextView
+                        android:id="@+id/editTextProductQuantity"
+                        style="@android:style/TextAppearance.DeviceDefault.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="1" />
+
+                    <Button
+                        android:id="@+id/plusQuantity"
+                        style="@android:style/TextAppearance.DeviceDefault.Small"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/bt_background"
+                        android:text="+"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/editTextProductQuantity" />
+                </LinearLayout>
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/details_cart_order"
@@ -128,7 +175,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/bt_background"
@@ -136,8 +182,7 @@
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextProductQuantity" />
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

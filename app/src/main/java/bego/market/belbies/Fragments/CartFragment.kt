@@ -1,11 +1,13 @@
 package bego.market.belbies.Fragments
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -31,7 +33,12 @@ class CartFragment : Fragment(){
 
     lateinit var userValidation: UserValidation
     lateinit var reLoadingLinearLayout: LinearLayout
+    lateinit var allOrderLinearLayout: LinearLayout
 
+    lateinit var totalPrice:TextView
+    lateinit var allOrderPrice:TextView
+
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -45,6 +52,10 @@ class CartFragment : Fragment(){
         userValidation = UserValidation(activity!!)
 
         reLoadingLinearLayout = view.findViewById(R.id._reloadingLinear)
+        allOrderLinearLayout = view.findViewById(R.id._allOrder)
+
+        totalPrice = view.findViewById(R.id._total_price)
+        allOrderPrice = view.findViewById(R.id._allOrderPrice)
 
 
         val dialog = ACProgressFlower.Builder(activity!!)
@@ -60,10 +71,13 @@ class CartFragment : Fragment(){
 
             if (list.isEmpty()){
                 reLoadingLinearLayout.visibility = View.VISIBLE
+                allOrderLinearLayout.visibility = View.GONE
+
             }
             else
             {
                 reLoadingLinearLayout.visibility = View.GONE
+                allOrderLinearLayout.visibility = View.VISIBLE
                 cartAdapter =
                     CartAdapter(
                         CartAdapter.DeleteOnClickListener {
@@ -80,7 +94,7 @@ class CartFragment : Fragment(){
                                 }
                                 else{
                                     dialog.show()
-                                    orderViewModel.addOrder(it.productName,it.productImage,it.totalPrice,userValidation.readEmail(),userValidation.readAddress())
+                                    orderViewModel.addOrder(it.productName,it.productImage,it.totalPrice,userValidation.readEmail(),userValidation.readAddress(),it.productQuantity)
                                 }
 
                             }
@@ -90,6 +104,8 @@ class CartFragment : Fragment(){
 
                         },
                         application)
+                totalPrice.text=list.sumBy { it.totalPrice.toInt() }.toString()+" جنية "
+                allOrderPrice.text= (list.sumBy { it.totalPrice.toInt() } + 10).toString() +" جنية "
                 cartAdapter.submitList(list)
                 rsCart.adapter = cartAdapter
 //            val simpleItemTouchCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
@@ -111,6 +127,8 @@ class CartFragment : Fragment(){
 
 
         })
+
+
 
         cartViewModel.productId.observe(viewLifecycleOwner, Observer {
             TastyToast.makeText(context,  "تم الحذف من العربة", TastyToast.LENGTH_LONG, TastyToast.INFO).show()

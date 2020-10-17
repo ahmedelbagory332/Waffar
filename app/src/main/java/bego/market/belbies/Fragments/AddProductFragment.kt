@@ -22,8 +22,11 @@ import bego.market.belbies.ViewModel.ViewModelFactory.AddSectionModelFactory
 import cc.cloudist.acplibrary.ACProgressConstant
 import cc.cloudist.acplibrary.ACProgressFlower
 import com.sdsmdg.tastytoast.TastyToast
+import java.text.NumberFormat
+import java.util.*
 
 
+@Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class AddProductFragment : Fragment(){
 
     lateinit var addSectionViewModel: AddSectionViewModel
@@ -45,7 +48,6 @@ class AddProductFragment : Fragment(){
         val ProductNameEditText:EditText = view.findViewById(R.id.productNameEditText)
         val ProductDescriptionEditText:EditText = view.findViewById(R.id.productDescriptionEditText)
         val ProductPriceEditText:EditText = view.findViewById(R.id.productPriceEditText)
-        val ProductOfferPriceEditText:EditText = view.findViewById(R.id.productOfferPriceEditText)
         val ProductOfferPercentageEditText:EditText = view.findViewById(R.id.productOfferPercentageEditText)
 
         addSectionImage = view.findViewById(R.id.productImage)
@@ -114,7 +116,6 @@ class AddProductFragment : Fragment(){
         addProductViewModel.connectionError.observe(viewLifecycleOwner, Observer {
             TastyToast.makeText(context,it, TastyToast.LENGTH_LONG, TastyToast.ERROR).show()
             dialog.dismiss()
-            ProductOfferPriceEditText.setText(it)
          })
 
 
@@ -131,13 +132,16 @@ class AddProductFragment : Fragment(){
                 else
                 {
                     dialog.show()
-                    if (ProductOfferPriceEditText.text.isEmpty() ||ProductOfferPercentageEditText.text.isEmpty())
+                    if (ProductOfferPercentageEditText.text.isEmpty())
                     {
                         addProductViewModel.uploadProduct(ProductNameEditText.text.toString(),ProductDescriptionEditText.text.toString(),ProductPriceEditText.text.toString(),sectionName,"0","0",selectedImage,application)
                     }
                     else
                     {
-                        addProductViewModel.uploadProduct(ProductNameEditText.text.toString(),ProductDescriptionEditText.text.toString(),ProductPriceEditText.text.toString(),sectionName,ProductOfferPriceEditText.text.toString(),ProductOfferPercentageEditText.text.toString(),selectedImage,application)
+                        val fmt: NumberFormat = NumberFormat.getNumberInstance(Locale.US)
+                        val productOfferPercentage: Double = fmt.parse(ProductOfferPercentageEditText.text.toString()).toDouble()/100
+                        val priceOffer = ProductPriceEditText.text.toString().toInt() * productOfferPercentage
+                        addProductViewModel.uploadProduct(ProductNameEditText.text.toString(),ProductDescriptionEditText.text.toString(),ProductPriceEditText.text.toString(),sectionName,priceOffer.toInt().toString(),ProductOfferPercentageEditText.text.toString(),selectedImage,application)
 
                     }
 

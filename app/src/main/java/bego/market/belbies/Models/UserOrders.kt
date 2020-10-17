@@ -10,5 +10,6 @@ data class OrdersUser(
     val name: String,
     val price: String,
     val productNumber: String,
-    val productUserEmail: String
+    val productUserEmail: String,
+   val productQuantity : String
 )

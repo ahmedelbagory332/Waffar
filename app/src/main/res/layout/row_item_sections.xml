@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ellipsize="end"
-            android:fontFamily="@font/el_messiri"
+
             android:gravity="center"
             android:maxLines="2"
             android:text="كهربا"

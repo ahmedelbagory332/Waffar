@@ -18,6 +18,7 @@ class CartViewModel(val dataSource: CartDatabaseDao, application: Application) :
     val cartProducts = dataSource.getAllProducts()
 
 
+
     val productId: LiveData<Int>
         get() = _productId
 

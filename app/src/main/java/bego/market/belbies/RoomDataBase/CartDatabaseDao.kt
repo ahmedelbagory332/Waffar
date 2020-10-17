@@ -18,7 +18,6 @@ interface CartDatabaseDao {
     @Query("SELECT * FROM cart_table ORDER BY productId ASC")
     fun getAllProducts(): LiveData<MutableList<Cart>>
 
-
     @Query("SELECT * from cart_table WHERE productId = :id")
     fun getProductWithId(id: String): LiveData<Cart>
 }

@@ -32,7 +32,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="right"
         android:maxLines="1"
         android:text="46 L.E"
@@ -54,7 +54,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
-        android:fontFamily="@font/el_messiri"
+
         android:gravity="right"
         android:maxLines="2"
         android:text="كانز"

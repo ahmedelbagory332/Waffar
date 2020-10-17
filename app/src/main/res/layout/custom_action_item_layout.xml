@@ -23,8 +23,7 @@
         android:layout_marginTop="3dp"
         android:background="@drawable/badge_background"
         android:gravity="center"
-        android:padding="3dp"
-        android:textColor="@android:color/white"
+         android:textColor="@android:color/white"
         android:text="0"
         style="@android:style/TextAppearance.DeviceDefault.Small"/>
 

@@ -33,6 +33,8 @@ class UserOrderAdapter(val deleteOnClickListener: DeleteOnClickListener, val del
          holder.orderProductName.text = "اسم المنتج : "+order?.name
          holder.orderProducttotalPrice.text = "اجمالى السعر : "+order?.price+" جنية "
         holder.orderProductNumber.text = "رقم الطلب : "+order?.productNumber
+        holder.orderQuantity.text = "الكمية : "+order?.productQuantity
+
         Glide.with(context!!).load(order?.image).into(holder.orderproductImage)
 
         holder.deleteButton.setOnClickListener {
@@ -52,6 +54,7 @@ class UserOrderAdapter(val deleteOnClickListener: DeleteOnClickListener, val del
         var orderProductName: TextView = itemView.findViewById(R.id.order_name)
          var orderProducttotalPrice: TextView = itemView.findViewById(R.id.order_price)
         var orderProductNumber: TextView = itemView.findViewById(R.id.order_number)
+        var orderQuantity: TextView = itemView.findViewById(R.id.order_count)
         var orderproductImage: ImageView = itemView.findViewById(R.id.order_imageView)
         var deleteButton: Button = itemView.findViewById(R.id.order_delete)
         var deliveryButton: Button = itemView.findViewById(R.id.order_delivery)

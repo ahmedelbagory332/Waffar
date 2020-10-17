@@ -42,7 +42,7 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST("orders.php")
-    fun addOrder(@Field("product_name") product_name:String,@Field("product_img") product_img:String,@Field("product_total_price") product_total_price:String,@Field("product_user_email") product_user_email:String,@Field("user_address") user_address:String) : Call<Orders>
+    fun addOrder(@Field("product_name") product_name:String,@Field("product_img") product_img:String,@Field("product_total_price") product_total_price:String,@Field("product_user_email") product_user_email:String,@Field("user_address") user_address:String,@Field("product_quantity") product_quantity:String) : Call<Orders>
 
     @Headers("Accept: application/json")
     @GET("getUsersOrders.php")
