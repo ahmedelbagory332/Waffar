@@ -7,7 +7,7 @@
     <string name="rate">قيم التطبيق</string>
     <string name="reports">الشكوى و المقترحات</string>
     <string name="logout">تسجيل الخروج</string>
-    <string name="belbies_market">Belbies Market</string>
+    <string name="belbies_market">وفر - Waffar</string>
     <string name="cart">عربه التسوق</string>
     <string name="description">الوصف:</string>
     <string name="title_action_bar">%1$S</string>
@@ -20,7 +20,7 @@
     <string name="login">تسجيل الدخول</string>
     <string name="name_hint">الاسم</string>
     <string name="phone_hint">رقم الهاتف</string>
-    <string name="header_name">Belbies Market</string>
+    <string name="header_name">وفر - Waffar</string>
     <string name="verification">التحقق من البريد الالكترونى</string>
     <string name="verification_code">كود التحقق</string>
     <string name="address">العنوان الخاص بك :</string>

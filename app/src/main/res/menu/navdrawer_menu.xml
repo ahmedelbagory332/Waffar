@@ -5,6 +5,12 @@
         android:id="@+id/faceBookActivity"
         android:title="@string/facebook" />
     <item
+        android:id="@+id/whatsAppActivity"
+        android:title="تواصل على الواتساب" />
+    <item
+        android:id="@+id/messengerActivity"
+        android:title="تواصل على ماسنجر" />
+    <item
         android:id="@+id/offersFragment"
         android:title="@string/offers" />
     <item

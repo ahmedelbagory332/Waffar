@@ -25,25 +25,22 @@
 
     <TextView
         android:id="@+id/number_user"
+        style="@android:style/TextAppearance.DeviceDefault.Medium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:ellipsize="end"
 
+        android:ellipsize="end"
         android:gravity="right"
         android:maxLines="1"
         android:text="46 L.E"
         android:textColor="#000000"
-        style="@android:style/TextAppearance.DeviceDefault.Medium"
-        app:layout_constraintBottom_toBottomOf="@+id/text_report"
         app:layout_constraintEnd_toStartOf="@+id/user_img"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="RtlHardcoded" />
 
     <TextView
@@ -52,18 +49,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
-
         android:gravity="right"
         android:maxLines="2"
         android:text="كانز"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/user_img"
         app:layout_constraintEnd_toStartOf="@+id/user_img"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/user_img" />
+        app:layout_constraintTop_toBottomOf="@+id/number_user" />
 
     <Button
         android:id="@+id/report_delete"
@@ -71,16 +68,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/bt_background_red"
         android:text="حذف "
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/user_img"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/user_img"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_img"
-        app:layout_constraintVertical_bias="0.583" />
+        app:layout_constraintTop_toBottomOf="@+id/text_report" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -70,6 +70,7 @@ class RegisterFragment : Fragment() {
                 "تم إرسال رمز التحقق" -> {
                     TastyToast.makeText(context,it, TastyToast.LENGTH_LONG, TastyToast.SUCCESS).show()
                     userValidation.writeEmail(editTextEmail.text.toString())
+                    userValidation.writeName(editTextName.text.toString())
                     findNavController().navigate(RegisterFragmentDirections.actionRegisterFragment2ToVerificationFragment())
                 }
             }

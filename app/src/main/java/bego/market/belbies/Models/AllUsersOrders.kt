@@ -7,6 +7,9 @@ package bego.market.belbies.Models
 data class UsersOrder(
     val mail: String,
     val orderNumbers: String,
-    val userAddress: String
+    val userAddress: String,
+    val userPhone: String,
+    val userName: String
+
 
 )

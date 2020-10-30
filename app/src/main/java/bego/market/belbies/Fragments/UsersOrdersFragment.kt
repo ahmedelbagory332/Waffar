@@ -53,9 +53,9 @@ class UsersOrdersFragment : Fragment(),SearchView.OnQueryTextListener {
             usersOrdersAdapter =UsersOrdersAdapter(
                                context,
                 list.UsersOrders,
-                UsersOrdersAdapter.OnClickListener {
+                UsersOrdersAdapter.OnClickListener { mail: String, address: String,phone: String, name: String ->
                     if (NetworkUtils().isInternetAvailable(activity!!)){
-                        findNavController().navigate(UsersOrdersFragmentDirections.actionUsersOrdersFragmentToUserOrderFragment2(it))
+                        findNavController().navigate(UsersOrdersFragmentDirections.actionUsersOrdersFragmentToUserOrderFragment2(mail,address,phone,name))
 
                     }
                     else{

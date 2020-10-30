@@ -28,12 +28,12 @@ class UsersOrdersAdapter(private val context: Context?, var list: MutableList<Us
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ChooseSectionViewHolder, position: Int) {
         val section = list?.get(position)
-         holder.orderUserName.text = section?.mail
+         holder.orderUserName.text = section?.userName
          holder.numberOrder.text = " عدد طلبات :  "+section?.orderNumbers
         holder.userAddress.text = section?.userAddress
 
         holder.itemView.setOnClickListener {
-            onClickListener.clickListener(section!!.mail)
+            onClickListener.clickListener(section!!.mail,section!!.userAddress,section!!.userPhone,section!!.userName)
         }
         holder.deleteButton.setOnClickListener {
             deleteOnClickListener.clickListener(position)
@@ -52,7 +52,7 @@ class UsersOrdersAdapter(private val context: Context?, var list: MutableList<Us
 
     }
 
-    class OnClickListener(val clickListener: (UserOrder: String) -> Unit) {
+    class OnClickListener(val clickListener: (mail: String,address: String,phone: String,name: String) -> Unit) {
     }
     class DeleteOnClickListener(val clickListener: (UserOrder: Int) -> Unit) {
     }

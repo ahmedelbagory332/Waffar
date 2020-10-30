@@ -28,10 +28,10 @@ class OrderViewModel() : ViewModel() {
 
 
 
-    fun addOrder(product_name:String,  product_img:String,  product_total_price:String,  product_user_email:String, user_address:String, product_quantity:String) {
+    fun addOrder(product_name:String,  product_img:String,  product_total_price:String,  product_user_email:String, user_address:String, product_quantity:String,user_phone:String,user_name:String) {
 
 
-        ApiClient().getINSTANCE()?.addOrder(product_name,  product_img,  product_total_price,  product_user_email, user_address, product_quantity)?.enqueue(object : Callback<Orders> {
+        ApiClient().getINSTANCE()?.addOrder(product_name,  product_img,  product_total_price,  product_user_email, user_address, product_quantity,user_phone,user_name)?.enqueue(object : Callback<Orders> {
                 override fun onFailure(call: Call<Orders>, t: Throwable) {
 
                     _connectionError.value = "حدث خطأ"

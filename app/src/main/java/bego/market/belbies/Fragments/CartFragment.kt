@@ -88,13 +88,13 @@ class CartFragment : Fragment(){
 
                         CartAdapter.OrderOnClickListener {
                             if (userValidation.readLoginStatus()){
-                                if (userValidation.readEmail().isEmpty()||userValidation.readAddress().isEmpty()){
+                                if (userValidation.readEmail().isEmpty()||userValidation.readAddress().isEmpty()||userValidation.readPhone().isEmpty()){
                                     TastyToast.makeText(context,  "برجاء ادخال عنوان", TastyToast.LENGTH_LONG, TastyToast.INFO).show()
 
                                 }
                                 else{
                                     dialog.show()
-                                    orderViewModel.addOrder(it.productName,it.productImage,it.totalPrice,userValidation.readEmail(),userValidation.readAddress(),it.productQuantity)
+                                    orderViewModel.addOrder(it.productName,it.productImage,it.totalPrice,userValidation.readEmail(),userValidation.readAddress(),it.productQuantity,userValidation.readPhone(),userValidation.readName())
                                 }
 
                             }

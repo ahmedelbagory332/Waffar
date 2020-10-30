@@ -30,6 +30,16 @@ class UserValidation(private var context: Context) {
         return sharedPreferences.getString("mail", "")!!
     }
 ///////////////////////////////////////////////////////////////////////////////
+fun writeName(name: String) {
+    val editor = sharedPreferences.edit()
+    editor.putString("name", name)
+    editor.apply()
+}
+
+    fun readName(): String {
+        return sharedPreferences.getString("name", "")!!
+    }
+    ///////////////////////////////////////////////////////////////////////////////
 fun writeSplashStatus(status: Boolean) {
     val editor = sharedPreferences.edit()
     editor.putBoolean("SplashStatus", status)
