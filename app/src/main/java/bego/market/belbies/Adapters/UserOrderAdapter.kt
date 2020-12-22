@@ -41,7 +41,7 @@ class UserOrderAdapter(val deleteOnClickListener: DeleteOnClickListener, val del
             deleteOnClickListener.clickListener(position)
         }
         holder.deliveryButton.setOnClickListener {
-            deliveryOnClickListener.clickListener(order!!.productUserEmail,order!!.productNumber)
+            deliveryOnClickListener.clickListener(order!!.productUserEmail,order.productNumber)
         }
 
     }

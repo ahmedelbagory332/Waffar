@@ -8,7 +8,7 @@ import android.os.Build
 
 class NetworkUtils {
 
-     fun isInternetAvailable(context: Context): Boolean {
+      fun isInternetAvailable(context: Context): Boolean {
         var result = false
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -38,4 +38,5 @@ class NetworkUtils {
 
         return result
     }
-}
+
+ }

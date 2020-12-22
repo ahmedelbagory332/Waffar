@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit
 
 class ApiClient {
     private val BASE_URL = "https://belbiesmarket.000webhostapp.com/php/"
-    lateinit var  apiInterface: ApiInterface
+     var  apiInterface: ApiInterface
     private var INSTANCE: ApiClient? = null
 
      init {

@@ -30,7 +30,6 @@ class AdminAllProductFragment : Fragment(),SearchView.OnQueryTextListener {
 
         val  rsSection: RecyclerView = view.findViewById(R.id.adminProduct)
         val spinKitView = view.findViewById<SpinKitView>(R.id.spin_kit)
-        val application = requireNotNull(this.activity).application
 
 
 

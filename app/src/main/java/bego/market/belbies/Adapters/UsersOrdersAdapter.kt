@@ -33,7 +33,7 @@ class UsersOrdersAdapter(private val context: Context?, var list: MutableList<Us
         holder.userAddress.text = section?.userAddress
 
         holder.itemView.setOnClickListener {
-            onClickListener.clickListener(section!!.mail,section!!.userAddress,section!!.userPhone,section!!.userName)
+            onClickListener.clickListener(section!!.mail,section.userAddress,section.userPhone,section.userName)
         }
         holder.deleteButton.setOnClickListener {
             deleteOnClickListener.clickListener(position)
