@@ -3,6 +3,7 @@
 
     <item
         android:id="@+id/faceBookActivity2"
+        android:onClick="closeDrawer"
         android:title="@string/facebook" />
     <item
         android:id="@+id/addProductFragment"

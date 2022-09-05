@@ -31,7 +31,7 @@
     <string name="adminAddProduct">اضافه منتج</string>
     <string name="adminEditProduct">تعديل منتج</string>
     <string name="adminAddSection">أضافه قسم</string>
-    <string name="addressHint">برجاء العلم ان سيتم اضافه 10 جنيه على قيمه الطلب و برجاء العلم ان التوصيل داخل مدينه بلبيس فقط للاستفسارات برجاء التواصل معانا على صفحتنا على الفيسبوك</string>
+    <string name="addressHint">برجاء العلم ان سيتم اضافه 10 جنيه على قيمه الطلب للاستفسارات برجاء التواصل معانا على صفحتنا على الفيسبوك</string>
     <string-array name="belbies">
         <item>بلبيس</item>
     </string-array>

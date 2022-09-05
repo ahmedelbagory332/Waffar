@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.AdminActivity">
+    tools:context=".ui.activities.AdminActivity">
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayoutAdmin"
         android:layout_width="match_parent"

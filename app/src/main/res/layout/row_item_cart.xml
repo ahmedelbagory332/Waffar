@@ -27,7 +27,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ellipsize="end"
-
         android:gravity="start"
         android:maxLines="2"
         android:text="اسم المنتج : كانز"
@@ -93,12 +92,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tv_cart_imageView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button_detalis"
+        app:layout_constraintStart_toEndOf="@+id/button_order"
         app:layout_constraintTop_toBottomOf="@+id/tv_cart_price"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button_detalis"
+        android:id="@+id/button_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

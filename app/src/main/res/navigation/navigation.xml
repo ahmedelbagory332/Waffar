@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/sectionsFragment"
-        android:name="bego.market.belbies.Fragments.SectionsFragment"
+        android:name="bego.market.waffar.ui.fragments.user.homePage.HomepageFragment"
         android:label="الصفحه الرئيسيه"
-        tools:layout="@layout/fragment_sections">
+        tools:layout="@layout/home_page_fragment">
         <action
             android:id="@+id/action_sectionsFragment_to_sectionFragment"
             app:destination="@id/sectionFragment" />
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/sectionFragment"
-        android:name="bego.market.belbies.Fragments.SectionFragment"
+        android:name="bego.market.waffar.ui.fragments.user.sections.SectionFragment"
         android:label="المنتجات"
         tools:layout="@layout/fragment_section">
         <argument
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="bego.market.belbies.Fragments.DetailsFragment"
+        android:name="bego.market.waffar.ui.fragments.user.productDetails.ProductDetailsFragment"
         tools:layout="@layout/fragment_details">
         <argument
             android:name="id"
@@ -37,16 +37,14 @@
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
-        android:name="bego.market.belbies.Fragments.CartFragment"
+        android:name="bego.market.waffar.ui.fragments.user.cart.CartFragment"
         android:label="عربة التسوق"
         tools:layout="@layout/fragment_cart">
-        <action
-            android:id="@+id/action_cartFragment_to_cartDetailsFragment"
-            app:destination="@id/cartDetailsFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/offersFragment"
-        android:name="bego.market.belbies.Fragments.OffersFragment"
+        android:name="bego.market.waffar.ui.fragments.user.offers.OffersFragment"
         android:label="العروض"
         tools:layout="@layout/fragment_offers">
 
@@ -56,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/offersDetailsFragment"
-        android:name="bego.market.belbies.Fragments.OffersDetailsFragment"
+        android:name="bego.market.waffar.ui.fragments.user.offers.OffersDetailsFragment"
         android:label="العروض"
         tools:layout="@layout/fragment_offer_details">
         <argument
@@ -65,66 +63,33 @@
     </fragment>
     <activity
         android:id="@+id/loginActivity"
-        android:name="bego.market.belbies.Activity.UserLoginActivity"
+        android:name="bego.market.waffar.ui.activities.UserLoginActivity"
         android:label="activity_user_login"
         tools:layout="@layout/activity_user_login" />
     <activity
-        android:id="@+id/_rate"
-        android:name="bego.market.belbies.Activity.RateActivity"
-        android:label="RateActivity" />
-    <activity
         android:id="@+id/logoutActivity"
-        android:name="bego.market.belbies.Activity.LogoutActivity"
+        android:name="bego.market.waffar.ui.activities.LogoutActivity"
         android:label="LogoutActivity" />
-    <fragment
-        android:id="@+id/cartDetailsFragment"
-        android:name="bego.market.belbies.Fragments.CartDetailsFragment"
-        android:label="عربة التسوق"
-        tools:layout="@layout/fragment_cart_details">
-        <argument
-            android:name="img"
-            app:argType="string" />
-        <argument
-            android:name="name"
-            app:argType="string" />
-        <argument
-            android:name="count"
-            app:argType="string" />
-        <argument
-            android:name="price"
-            app:argType="string" />
-    </fragment>
+
     <fragment
         android:id="@+id/myAddress"
-        android:name="bego.market.belbies.Fragments.AddressFragment"
+        android:name="bego.market.waffar.ui.fragments.user.AddressFragment"
         android:label="العنوان"
         tools:layout="@layout/fragment_address" />
-    <activity
-        android:id="@+id/faceBookActivity"
-        android:name="bego.market.belbies.Activity.FaceBookActivity"
-        android:label="FaceBookActivity" />
     <fragment
         android:id="@+id/allSectionFragment"
-        android:name="bego.market.belbies.Fragments.AllSectionFragment"
+        android:name="bego.market.waffar.ui.fragments.user.sections.AllSectionsFragment"
         android:label="الاقسام"
-        tools:layout="@layout/fragment_all_section">
+        tools:layout="@layout/fragment_all_sections">
     <action
         android:id="@+id/action_sectionsFragment_to_sectionFragment"
         app:destination="@id/sectionFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportFragment"
-        android:name="bego.market.belbies.Fragments.ReportFragment"
+        android:name="bego.market.waffar.ui.fragments.report.ReportFragment"
         android:label="ارسال شكوى و تقرير"
         tools:layout="@layout/fragment_report"/>
-    <activity
-        android:id="@+id/whatsAppActivity"
-        android:name="bego.market.belbies.Activity.WhatsAppActivity"
-        android:label="WhatsAppActivity" />
-    <activity
-        android:id="@+id/messengerActivity"
-        android:name="bego.market.belbies.Activity.MessengerActivity"
-        android:label="MessengerActivity" />
 
 
 </navigation>

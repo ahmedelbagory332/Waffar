@@ -3,18 +3,22 @@
 
     <item
         android:id="@+id/faceBookActivity"
+        android:onClick="closeDrawer"
         android:title="@string/facebook" />
     <item
         android:id="@+id/whatsAppActivity"
+        android:onClick="closeDrawer"
         android:title="تواصل على الواتساب" />
     <item
         android:id="@+id/messengerActivity"
+        android:onClick="closeDrawer"
         android:title="تواصل على ماسنجر" />
     <item
         android:id="@+id/offersFragment"
         android:title="@string/offers" />
     <item
         android:id="@+id/_rate"
+        android:onClick="closeDrawer"
         android:title="@string/rate" />
     <item
         android:id="@+id/reportFragment"

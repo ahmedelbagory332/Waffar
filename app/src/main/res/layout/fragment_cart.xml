@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Fragments.SectionFragment">
+    tools:context=".ui.fragments.user.sections.SectionFragment">
 
     <LinearLayout
-        android:id="@+id/_reloadingLinear"
+        android:id="@+id/_noProductLinear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"

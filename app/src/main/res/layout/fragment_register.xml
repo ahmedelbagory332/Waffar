@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.LoginFragment">
+    tools:context=".ui.fragments.user.userAuthentication.LoginFragment">
+
+    <ProgressBar
+        android:id="@+id/progressBarSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:indeterminateTint="#d60909"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         style="@style/loginCard"
-        app:cardCornerRadius="@dimen/loginCardRadius"
-        android:elevation="5dp"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/loginViewsMargin"
-        android:layout_marginBottom="@dimen/loginViewsMargin"
-        android:background="@color/whiteCardColor">
+        android:background="@color/whiteCardColor"
+        android:elevation="5dp"
+        app:cardCornerRadius="@dimen/loginCardRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             style="@style/linearParent"
@@ -22,8 +37,8 @@
 
             <TextView
                 style="@style/headerTextPrimary"
-                android:text="@string/register"
-                android:layout_marginTop="@dimen/loginViewsMargin"/>
+                android:layout_marginTop="@dimen/loginViewsMargin"
+                android:text="@string/register" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/parent"
@@ -70,12 +85,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                style="@style/loginButton"
                 android:id="@+id/signUpButton"
+                style="@style/loginButton"
                 android:layout_gravity="center"
                 android:text="@string/register" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="bego.market.belbies.Fragments.LoginFragment"
+        android:name="bego.market.waffar.ui.fragments.user.userAuthentication.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment2"
-        android:name="bego.market.belbies.Fragments.RegisterFragment"
+        android:name="bego.market.waffar.ui.fragments.user.userAuthentication.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
@@ -28,8 +28,12 @@
     </fragment>
     <fragment
         android:id="@+id/verificationFragment"
-        android:name="bego.market.belbies.Fragments.verificationFragment"
+        android:name="bego.market.waffar.ui.fragments.user.userAuthentication.VerificationFragment"
         android:label="verificationFragment"
-        tools:layout="@layout/fragment_verification"/>
+        tools:layout="@layout/fragment_verification">
+        <action
+            android:id="@+id/action_verificationFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
 </navigation>

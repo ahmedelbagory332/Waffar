@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/usersOrdersFragment"
-        android:name="bego.market.belbies.Fragments.UsersOrdersFragment"
+        android:name="bego.market.waffar.ui.fragments.admin.order.UsersOrderFragment"
         android:label="الطلبات"
         tools:layout="@layout/fragment_users_orders">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/userOrderFragment2"
-        android:name="bego.market.belbies.Fragments.UserOrderFragment"
+        android:name="bego.market.waffar.ui.fragments.admin.order.UserOrdersFragment"
         android:label="الطلبات"
         tools:layout="@layout/fragment_user_order">
         <argument
@@ -35,17 +35,17 @@
     </fragment>
     <fragment
         android:id="@+id/addSectionFragment"
-        android:name="bego.market.belbies.Fragments.AddSectionFragment"
+        android:name="bego.market.waffar.ui.fragments.admin.section.AddSectionFragment"
         android:label="@string/adminAddSection"
         tools:layout="@layout/fragment_add_section"/>
     <fragment
         android:id="@+id/addProductFragment"
-        android:name="bego.market.belbies.Fragments.AddProductFragment"
+        android:name="bego.market.waffar.ui.fragments.admin.product.AddProductFragment"
         android:label="أضافه منتجات"
         tools:layout="@layout/fragment_edit_product"/>
     <fragment
         android:id="@+id/adminAllProductFragment"
-        android:name="bego.market.belbies.Fragments.AdminAllProductFragment"
+        android:name="bego.market.waffar.ui.fragments.admin.product.AdminAllProductFragment"
         android:label="تعديل منتج"
         tools:layout="@layout/fragment_all_product_admin">
         <action
@@ -54,7 +54,7 @@
     </fragment>
     <fragment
         android:id="@+id/editProductFragment"
-        android:name="bego.market.belbies.Fragments.EditProductFragment"
+        android:name="bego.market.waffar.ui.fragments.admin.product.EditProductFragment"
         android:label="تعديل منتج"
         tools:layout="@layout/fragment_edit_product">
         <argument
@@ -84,15 +84,11 @@
     </fragment>
     <activity
         android:id="@+id/logoutActivity2"
-        android:name="bego.market.belbies.Activity.LogoutActivity"
+        android:name="bego.market.waffar.ui.activities.LogoutActivity"
         android:label="LogoutActivity" />
-    <activity
-        android:id="@+id/faceBookActivity2"
-        android:name="bego.market.belbies.Activity.FaceBookActivity"
-        android:label="FaceBookActivity" />
     <fragment
         android:id="@+id/allReportFragment"
-        android:name="bego.market.belbies.Fragments.AllReportFragment"
+        android:name="bego.market.waffar.ui.fragments.report.AllReportFragment"
         android:label="التقارير"
         tools:layout="@layout/fragment_all_report"/>
 

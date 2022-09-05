@@ -3,10 +3,8 @@
     <color name="colorPrimary">#001787</color>
     <color name="colorPrimaryDark">#06134E</color>
     <color name="colorAccent">#f3f3f3</color>
-    <color name="Mycolor">#01695f</color>
-    <color name="green">#8bc34a</color>
-    <color name="colorwhite">#ffffff</color>
-    <color name="red">#af0505</color>
+     <color name="green">#8bc34a</color>
+     <color name="red">#af0505</color>
     <!--colors for modern ui-->
     <color name="whiteTextColor">#fff</color>
     <color name="primaryTextColor">#00a5ff</color>
